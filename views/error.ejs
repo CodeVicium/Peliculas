@@ -1,9 +1,13 @@
-<% include header.js %>
-<div class="container bg-danger">
-    <h1 class="jumbotron bg-dark text-center text-warning"><%= message %></h1>
+<% include header.ejs %>
+<div class="container bg-dark">
+    <h1 class="jumbotron bg-dark text-center text-danger"><%= message %></h1>
     <div class="row" >
-    <h2 class="text-center col-*-3 m-auto bg-warning text-danger rounded "><%= error.status %></h2>
+    <h2 class="text-center  col-*-3 m-auto bg-warning text-info rounded "><%= error.status %></h2>
     </div>
-    <pre class="pre pre-scrolleable"><%= error.stack %></pre>
+    
+  
+        <pre class= "pre-scrolleable mt-5 text-center bg-info rounded"><%= error.stack %></pre>
+    
+    
 </div>
-<% include footer.js %>
+<% include footer.ejs %>
