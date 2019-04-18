@@ -1,5 +1,6 @@
 // middleware para el inicio de session
-var requiresLogin = function(req,res,next){
+var requiresLogin = function
+(req,res,next){
     if (req.session && req.session.userId){
         return next();
     }

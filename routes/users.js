@@ -5,7 +5,9 @@ var User = require ('../models/user');
 
 /* GET users listing. */
 router.get('/',requiresLogin, function(req, res, next) {
-  res.send('respond with a resource');
+ 
+  // res.send('respond with a resource');
+  res.render("login",{ title:"Login de Usuario."});
 });
 
 //escucho el post de mi pagina de login 
