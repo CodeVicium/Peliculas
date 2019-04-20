@@ -20,16 +20,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
+//conectar con mongo
 mongoose.connect("mongodb://localhost:27017/movieapp",{useNewUrlParser:true,promiseLibrary:bluebird});
 // tomo la conexion en una variable 
 var db = mongoose.connection;
@@ -46,6 +37,20 @@ app.use(session({
   cookie:{maxAge: 30*60*1000},//media hora y expira
   store: new mongostore({mongooseConnection:db})
 }));
+
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

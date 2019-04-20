@@ -3,16 +3,49 @@
     <div class="container">
         <div class="card mt-5 text-ligth bg-dark shadow-lg">
             <div class="card-header">
-                <h2 class="card-title">Formulario de Login y Registración </h2>
+                <h2 class="card-title text-center text-white">Formulario de Login y Registración </h2>
             </div>
             <div class="card text-primary shadow-lg">
                 <div class="card-body">
-                    <div class="card-title col-md-6 col-lg-6">
-                        <h3>Loguearse</h3>
+                    <div class="card-title text-center ">
+                        <h3><i>Loguearse</i> </h3>
                     </div>
-                    <div class="formLog">
-                        <form action="/user"></form>
-                    </div>
+                        <div class="formLog">
+                        <form action="/users" method="POST">
+                            <div class="form-group col-md-6 col-lg-6 m-auto">
+                                <input class="form-control" type="text" name="logemail" 
+                                placeholder="E-mail" required >
+                                <input class="form-control" type="password" name="logpassword" 
+                                placeholder="Clave" required >
+                                <div class="btnLog">
+                                    <input type="submit" value="Entrar" class="pull-right mt-2  btn btn-success btn-lg">
+                                </div>
+                            </div>
+                            
+                        </form><br>
+
+                    </div>  
+                </div>
+                <div class="card-body"></div>             
+                    <div class="card-title text-center" >
+                        <h3><i>Registrarse</i> </h3>
+                    </div>   
+                    <div class="formReg">
+                        <form action="/users" method="post">
+                            <div class="form-group col-md-6 col-lg-6 m-auto">
+                                <input class="form-control"  type="text" name="email" 
+                                placeholder="E-mail" required >
+                                <input type="text" class="form-control" name="username" placeholder="Usuario">
+                                <input class="form-control" type="password" name="password" 
+                                placeholder="Clave" required >
+                                <input class="form-control" type="password" name="passwordConf" 
+                                placeholder="COnfirmar su Clave" required >
+                                <div class="btnReg">
+                                    <input type="submit" value="Registrar" class="pull-right mt-2  btn btn-success btn-lg">
+                                </div>
+                            </div>
+                        </form>
+                    </div>             
                 </div>
             </div>
         </div>
