@@ -1,0 +1,24 @@
+<div class="row p-2 mb-5">
+    <table class="table table-responsive-sm table-striped">
+        <tr class="header">
+            <th onclick="setOrder();">Pelicula</th>
+            <th onclick="setOrder();">Genero</th>
+            <th onclick="setOrder();">Año</th>
+            <th>Acciones</th>
+        </tr>
+        <tbody>
+            <% locals.movies.forEach((item)=>{ %>
+                <tr>
+                    <td><% item.title %></td>
+                    <td><% item.genero %></td>
+                    <td><% item.year %></td>
+                    <td>
+                        <a href="/details/<% item._id %>" class="mr-3 "><i class="fa fa-info"></i> </a>
+                        <a href="/edit/<% item._id %>" class="mr-3 "><i class="fa fa-edit"></i> </a>
+                    </td>
+
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>

@@ -4,7 +4,7 @@ var requiresLogin= require ('./requireslogin');
 
 /* GET home page. */
 router.get('/',requiresLogin , function(req, res, next) {
-  res.render('index', { title: 'Express',logged:req.session.userId });
+  res.render('index', { title: 'Express',logged:req.session.userId,movies:[] });
 });
 
 router.get('/login',function(req,res,next){
