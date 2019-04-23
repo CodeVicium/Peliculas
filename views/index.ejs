@@ -1,11 +1,25 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<% include header.ejs %>
+
+<div class="container">
+  <div class="card mt-5 shadow-lg">
+    <div class="card-header text-light bg-info">
+      <h1>Listado de Peliculas</h1>
+      <div class="form-group">
+        <a href="/addmovie" class="btn btn-large btn-outline-light"  >Agregar</a>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-search" onclick="filterData();"></i>
+          </span>
+        </div>
+        <input type="text" id="filter" class="form-control">
+      </div>
+    </div>
+    <div class="card-body movie-table">
+      <% include listpartial.ejs %>
+    </div>
+  </div>
+</div>
+
+<% include footer.ejs %>

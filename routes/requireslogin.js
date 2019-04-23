@@ -7,7 +7,8 @@ var requiresLogin = function
     else{
         var err = new Error ("Tiene que estar logiado para ver esta pagina..");
         err.status = 401;
-        return next(err);
+        // return next(err);
+        res.redirect('/login');
     }
 }
 module.exports= requiresLogin;
