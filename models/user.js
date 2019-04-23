@@ -60,10 +60,11 @@ bcrypt.hash(user.password,10,function(err,hash){
         return next (err);
     }
     user.password=hash;
-    user.passwordconf=hash;
+    user.passwordConf=hash;
     next();
-}) ;
 });
+});
+
 
 var User = mongoose.model("User",UserSchema);
 module.exports= User;
