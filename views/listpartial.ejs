@@ -21,4 +21,32 @@
             <% }); %>
         </tbody>
     </table>
+    <div>
+        <div class="d-inline-block mr-3">
+            <select class="btn btn-light" name="" id="pageCount" onchange="pageCountChange();">
+                <option value="5" <% if(recPerPage == 5){%> selected <% } %>>5</option>
+                <option value="10"<% if(recPerPage == 10){%> selected <% } %>>10</option>
+                <option value="20"<% if(recPerPage == 20){%> selected <% } %>>20</option>
+            </select>
+        </div>
+        <div class="paginatorcontainer d-inline-block" >
+            <ul class="pagination">
+                <li class="page-item">
+                    <a href="page-link" href="#"  <%if(currentPage>1) { %> onclick="pageChange(-1);" 
+                        <% }%> >&laquo; </a>
+                </li>
+                <% for (i=1;i<=cantPages;i++){ %>
+                    <li class="page-item <% if(i == currentPage){%> active  <%}%> " >
+                    <a class="page-link" href="#" onclick="gotoPage(<%= i %>);"> <%=i%> 
+                    </a>
+                    </li>
+                <% } %>
+                <li class="page-item">
+                        <a href="page-link" href="#"  <% if( currentPage > cantPages ) { %> onclick="pageChange(1);" 
+                            <% }%> >&raquo; </a>
+                    </li>
+            </ul>    
+        </div>
+
+    </div> 
 </div>
